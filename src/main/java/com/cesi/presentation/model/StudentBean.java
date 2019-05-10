@@ -5,6 +5,9 @@
  */
 package com.cesi.presentation.model;
 
+import com.cesi.business.logic.StudentServiceLocal;
+import javax.inject.Inject;
+
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -12,7 +15,7 @@ import java.io.Serializable;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
-import javax.inject.Inject;
+
 
 /**
  *
