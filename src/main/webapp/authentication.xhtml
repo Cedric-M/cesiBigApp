@@ -7,10 +7,10 @@
     </h:head>
     <h:body>
         <h:form>
-            email : <h:inputText id="email" />
-            mot de passe : <h:inputSecret id="pwd" />
+            email : <h:inputText id="email" value="#{studentModel.email}" />
+            mot de passe : <h:inputSecret id="pwd" value="#{studentModel.password}" />
             <br/>
-            <h:commandButton id="summary" value="résumé >>" action="summary" />
+            <h:commandButton id="summary" value="résumé >>" action="#{studentModel.addAuthentication}" />
         </h:form>
     </h:body>
 </html>

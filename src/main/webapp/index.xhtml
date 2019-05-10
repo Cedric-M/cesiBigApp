@@ -5,14 +5,12 @@
     <h:head>
         <title>Enregistrement (Facelet Title)</title>
     </h:head>
-    <h:body>
-        Hello from Facelets
-        
+    <h:body>     
         <h:form>
-            nom : <h:inputText id="fname" />
-            prénom : <h:inputText id="name" />
+            nom : <h:inputText id="fname" value="#{studentModel.firstname}" />
+            prénom : <h:inputText id="name" value="#{studentModel.lastname}" />
             <br/>
-            <h:commandButton id="auth" value="authentification >>" action="authentication" />
+            <h:commandButton id="auth" value="authentification >>" action="#{studentModel.addIdentity}" />
         </h:form>
     </h:body>
 </html>
