@@ -12,6 +12,8 @@ import java.io.Serializable;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
+import javax.inject.Inject;
+
 /**
  *
  * @author ced
@@ -21,6 +23,11 @@ import javax.servlet.http.HttpSession;
 public class StudentBean implements Serializable {
 
     private String firstname,lastname,email, password;
+    
+    //injection du service
+    @Inject
+    private StudentServiceLocal studentService;
+    
     /**
      * Creates a new instance of StudentBean
      */
@@ -29,17 +36,21 @@ public class StudentBean implements Serializable {
     
     //méthodes d'action
     public String addIdentity(){
-        System.out.println(firstname+" "+lastname);
+        //System.out.println(firstname+" "+lastname);
+        studentService.addStudent(firstname, lastname);
         return "authentication";
     }
     
     public String addAuthentication(){
-        System.out.println(email+" "+password);
+        //System.out.println(email+" "+password);
+        studentService.addAuthenticationInformations(email, password);
         return "summary";
     }
     
     public String create(){
-        System.out.println("création de l'étudiant");
+        //System.out.println("création de l'étudiant");
+        studentService.save();
+        
         HttpSession session = (HttpSession)
         FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         session.invalidate();
