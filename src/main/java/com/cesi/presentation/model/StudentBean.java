@@ -6,7 +6,8 @@
 package com.cesi.presentation.model;
 
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
 
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
@@ -16,10 +17,9 @@ import javax.servlet.http.HttpSession;
  * @author ced
  */
 @Named(value = "studentModel")
-@Dependent
-public class StudentBean {
+@SessionScoped
+public class StudentBean implements Serializable {
 
-    
     private String firstname,lastname,email, password;
     /**
      * Creates a new instance of StudentBean
@@ -27,15 +27,17 @@ public class StudentBean {
     public StudentBean() {
     }
     
-//méthodes d'action
+    //méthodes d'action
     public String addIdentity(){
         System.out.println(firstname+" "+lastname);
         return "authentication";
     }
+    
     public String addAuthentication(){
         System.out.println(email+" "+password);
         return "summary";
     }
+    
     public String create(){
         System.out.println("création de l'étudiant");
         HttpSession session = (HttpSession)
@@ -72,6 +74,4 @@ public class StudentBean {
     public void setPassword(String password) {
         this.password = password;
     }
-    }
-    
 }
