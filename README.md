@@ -1,4 +1,8 @@
-cesiBigApp
+# cesiBigApp
+
+The objective of this workshop is to get started with Java EE development under NetBeans. Also using tools such as [Payara](https://www.payara.fish/), [MySQL Workbench](https://www.mysql.com/products/workbench/) and [GitKraken](https://www.gitkraken.com/). 
+
+## Preview
 
 Imput firstname and Lastname:
 
@@ -18,3 +22,16 @@ Summary of all information provided by the user:
 Checking if all data have been successfully recorded into the database through MySQL Workbench:
 
 ![image](https://user-images.githubusercontent.com/19567048/57619973-afae9600-7587-11e9-8408-90eadac5adf6.png)
+
+
+## Built With
+
+* [Payara](https://www.payara.fish/) - Open-source application server derived from GlassFish Server Open Source Edition.
+* [MySQL Workbench](https://www.mysql.com/products/workbench/) - IDE for the MySQL database system.
+* [Git Kraken](https://www.gitkraken.com/) - Git GUI client
+* [NetBeans](https://netbeans.org/) - IDE - Java EE Development
+
+
+## Authors
+
+* **[Cédric M](https://github.com/Cedric-M)** - *Software Engineer*
