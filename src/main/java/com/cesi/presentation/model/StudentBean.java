@@ -6,8 +6,6 @@
 package com.cesi.presentation.model;
 
 import com.cesi.business.logic.StudentServiceLocal;
-import javax.inject.Inject;
-
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -15,7 +13,7 @@ import java.io.Serializable;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
-
+import javax.inject.Inject;
 
 /**
  *
@@ -34,8 +32,6 @@ public class StudentBean implements Serializable {
     /**
      * Creates a new instance of StudentBean
      */
-    public StudentBean() {
-    }
     
     //méthodes d'action
     public String addIdentity(){
@@ -54,10 +50,9 @@ public class StudentBean implements Serializable {
         //System.out.println("création de l'étudiant");
         studentService.save();
         
-        HttpSession session = (HttpSession)
-        FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        HttpSession session = (HttpSession)FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         session.invalidate();
-    return "index";
+        return "index";
     }
     
     //getters & setters

@@ -22,7 +22,7 @@ public class StudentService implements StudentServiceLocal {
 
     @Override
     public void addAuthenticationInformations(String email, String pwd) {
-       System.out.println("Ajout des informations d'authentification :"+email+""+pwd);
+       System.out.println("Ajout des informations d'authentification :"+email+" "+pwd);
     }
 
     @Override
