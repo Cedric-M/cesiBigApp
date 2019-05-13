@@ -5,6 +5,7 @@
  */
 package com.cesi.business.logic;
 
+import com.cesi.business.domain.Student;
 import javax.ejb.Stateful;
 import javax.ejb.Remove;
 
@@ -14,14 +15,20 @@ import javax.ejb.Remove;
  */
 @Stateful
 public class StudentService implements StudentServiceLocal {
+    
+    private Student student = new Student();
 
     @Override
     public void addStudent(String firstname, String lastname) {
+        student.setFirstname(firstname);
+        student.setLastname(lastname);
         System.out.println("Identité de l'etudiant " +firstname+ " " +lastname);
     }
 
     @Override
     public void addAuthenticationInformations(String email, String pwd) {
+        student.setEmail(email);
+        student.setPassword(pwd);
        System.out.println("Ajout des informations d'authentification :"+email+" "+pwd);
     }
 
